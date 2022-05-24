@@ -57,6 +57,7 @@ Save screenshots
   <p>{file.name}</p>
   <model-viewer
     environment-image="neutral"
+    camera-orbit="0deg 90deg 105%"
     src={URL.createObjectURL(file)}
     id={file.name}
   />
@@ -65,7 +66,6 @@ Save screenshots
 <svelte:head>
   <script
     type="module"
-    camera-target="0deg 90deg 105%"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </svelte:head>
 
