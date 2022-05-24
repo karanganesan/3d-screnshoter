@@ -24,10 +24,11 @@
       downloadURI(image, file.name.split(".")[0] + "_front.png");
 
       const imageBack = document
-        .getElementById(file.name+"back")
+        .getElementById(file.name + "back")
         .toDataURL("image/png", 1);
       downloadURI(imageBack, file.name.split(".")[0] + "_front.png");
-  });
+    });
+  };
 </script>
 
 Select 3D models to screenshot
