@@ -23,23 +23,11 @@
         .toDataURL("image/png", 1);
       downloadURI(image, file.name.split(".")[0] + "_front.png");
 
-      document.getElementById(file.name).addEventListener(
-        "camera-change",
-        () => {
-          setTimeout(() => {
-            const image = document
-              .getElementById(file.name)
-              .toDataURL("image/png", 1);
-            downloadURI(image, file.name.split(".")[0] + "_back.png");
-          }, 2000);
-        },
-        { once: true }
-      );
-      document
-        .getElementById(file.name)
-        .setAttribute("camera-orbit", "-180deg 90deg 105%");
-    });
-  };
+      const imageBack = document
+        .getElementById(file.name+"back")
+        .toDataURL("image/png", 1);
+      downloadURI(imageBack, file.name.split(".")[0] + "_front.png");
+  });
 </script>
 
 Select 3D models to screenshot
@@ -59,6 +47,12 @@ Save screenshots
     camera-orbit="0deg 90deg 105%"
     src={URL.createObjectURL(file)}
     id={file.name}
+  />
+  <model-viewer
+    environment-image="neutral"
+    camera-orbit="-180deg 90deg 105%"
+    src={URL.createObjectURL(file)}
+    id={file.name + "back"}
   />
 {/each}
 
