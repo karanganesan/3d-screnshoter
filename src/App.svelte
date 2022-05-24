@@ -38,7 +38,7 @@
       );
       document
         .getElementById(file.name)
-        .setAttribute("camera-orbit", "-180deg 75deg 105%");
+        .setAttribute("camera-orbit", "-180deg 90deg 105%");
     });
   };
 </script>
@@ -65,6 +65,7 @@ Save screenshots
 <svelte:head>
   <script
     type="module"
+    camera-target="0deg 90deg 105%"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </svelte:head>
 
