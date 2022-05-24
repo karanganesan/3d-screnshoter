@@ -31,7 +31,7 @@
               .getElementById(file.name)
               .toDataURL("image/png", 1);
             downloadURI(image, file.name.split(".")[0] + "_back.png");
-          }, 1000);
+          }, 2000);
         },
         { once: true }
       );
@@ -54,7 +54,11 @@ Save screenshots
 
 {#each files as file}
   <p>{file.name}</p>
-  <model-viewer src={URL.createObjectURL(file)} id={file.name} />
+  <model-viewer
+    environment-image="neutral"
+    src={URL.createObjectURL(file)}
+    id={file.name}
+  />
 {/each}
 
 <svelte:head>
