@@ -31,7 +31,6 @@
               .getElementById(file.name)
               .toDataURL("image/png", 1);
             downloadURI(image, file.name.split(".")[0] + "_back.png");
-            window.scrollTo(0, document.body.scrollHeight);
           }, 2000);
         },
         { once: true }
